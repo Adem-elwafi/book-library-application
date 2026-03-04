@@ -8,6 +8,5 @@ public class BookLibraryApiApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(BookLibraryApiApplication.class, args);
-		System.out.println("hello world");
 	}
 }

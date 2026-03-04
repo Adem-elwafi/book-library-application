@@ -1,7 +1,7 @@
 package com.adem.book_library_api.controller;
 
 import com.adem.book_library_api.model.Book;
-import com.adem.book_library_api.repository.BookRepository;
+import com.adem.book_library_api.service.BookService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -10,19 +10,19 @@ import java.util.List;
 @RequestMapping("/api/books")
 public class BookController {
 
-    private final BookRepository bookRepository;
+    private final BookService bookService;
 
-    // Injection par constructeur (L'équivalent du typage dans le constructeur Laravel)
-    public BookController(BookRepository bookRepository) {
-        this.bookRepository = bookRepository;
+    public BookController(BookService bookService) {
+        this.bookService = bookService;
     }
 
     @GetMapping
-    public List<Book> getAllBooks() {
-        return bookRepository.findAll();
+    public List<Book> getAll() {
+        return bookService.findAll();
     }
+
     @PostMapping
-    public Book createBook(@RequestBody Book  book ){
-        return bookRepository.save(book);
+    public Book create(@RequestBody Book book) {
+        return bookService.save(book);
     }
 }
