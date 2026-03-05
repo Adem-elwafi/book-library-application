@@ -1,0 +1,59 @@
+[
+  {
+    "title": "Le Petit Prince",
+    "author": "Antoine de Saint-Exupéry",
+    "isbn": "978-2070612758",
+    "publicationYear": 1943,
+    "genre": "Fable"
+  },
+  {
+    "title": "1984",
+    "author": "George Orwell",
+    "isbn": "978-0451524935",
+    "publicationYear": 1949,
+    "genre": "Science Fiction"
+  },
+  {
+    "title": "L'Étranger",
+    "author": "Albert Camus",
+    "isbn": "978-2070360024",
+    "publicationYear": 1942,
+    "genre": "Roman"
+  },
+  {
+    "title": "Harry Potter à l'école des sorciers",
+    "author": "J.K. Rowling",
+    "isbn": "978-2070584628",
+    "publicationYear": 1997,
+    "genre": "Fantasy"
+  },
+  {
+    "title": "Le Seigneur des Anneaux",
+    "author": "J.R.R. Tolkien",
+    "isbn": "978-2266154345",
+    "publicationYear": 1954,
+    "genre": "Fantasy"
+  },
+  {
+    "title": "Les Misérables",
+    "author": "Victor Hugo",
+    "isbn": "978-2253096337",
+    "publicationYear": 1862,
+    "genre": "Roman"
+  },
+  {
+    "title": "Voyage au centre de la Terre",
+    "author": "Jules Verne",
+    "isbn": "978-2253006329",
+    "publicationYear": 1864,
+    "genre": "Science Fiction"
+  },
+  {
+    "title": "Le Comte de Monte-Cristo",
+    "author": "Alexandre Dumas",
+    "isbn": "978-2253098805",
+    "publicationYear": 1844,
+    "genre": "Roman"
+  }
+]
+

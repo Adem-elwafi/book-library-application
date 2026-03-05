@@ -19,7 +19,12 @@ public class BookService {
         return bookRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Livre non trouvé avec l'id : " + id));
     }
-
+    public List<Book> searchBooks(String title){
+        return bookRepository.findByTitleContainingIgnoreCase(title);
+    }
+    public List<Book> getByGenre(String genre){
+        return bookRepository.findByGenre(genre);
+    }
     public List<Book> findAll() {
         return bookRepository.findAll();
     }

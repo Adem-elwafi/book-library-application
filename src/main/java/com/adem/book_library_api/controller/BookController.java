@@ -25,4 +25,12 @@ public class BookController {
     public Book create(@RequestBody Book book) {
         return bookService.save(book);
     }
+    @GetMapping("/search")
+    public List<Book> searchBooks(@RequestParam String title){
+        return bookService.searchBooks(title);
+    }
+    @GetMapping("/genre/{genre}")
+    public List<Book> getByGenre(@PathVariable String genre){
+        return bookService.getByGenre(genre);
+    }
 }
