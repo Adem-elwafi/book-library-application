@@ -26,9 +26,22 @@ public class BookService {
         return bookRepository.findByGenre(genre);
     }
     public List<Book> findAll() {
-        return bookRepository.findAll();
+        return bookRepository.findAll(org.springframework.data.domain.Sort.by("title").ascending());
     }
 
+    public Book updateBook(Long id, Book bookDetails) {
+        // 1. On récupère le livre existant ou on jette une exception
+        Book existingBook = findById(id);
+
+        existingBook.setTitle(bookDetails.getTitle());
+        existingBook.setAuthor(bookDetails.getAuthor());
+        existingBook.setIsbn(bookDetails.getIsbn());
+        existingBook.setPublicationYear(bookDetails.getPublicationYear());
+        existingBook.setGenre(bookDetails.getGenre());
+
+        // 3. On sauvegarde
+        return bookRepository.save(existingBook);
+    }
     public Book save(Book book) {
         return bookRepository.save(book);
     }

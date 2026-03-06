@@ -33,4 +33,8 @@ public class BookController {
     public List<Book> getByGenre(@PathVariable String genre){
         return bookService.getByGenre(genre);
     }
+    @PutMapping("/{id}")
+    public Book updateBook(@PathVariable Long id, @RequestBody Book bookDetails) {
+        return bookService.updateBook(id, bookDetails);
+    }
 }
