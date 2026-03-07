@@ -1,26 +1,45 @@
-### Créer un nouveau livre
+### 1. Créer un livre (POST)
 POST http://localhost:8081/api/books
 Content-Type: application/json; charset=utf-8
 
 {
-  "title": "Le Petit Prince",
-  "author": "Antoine de Saint-Exupery",
-  "isbn": "123456",
-  "publicationYear": 1943,
-  "genre": "Fable"
+  "title": "L'Étranger",
+  "author": "Albert Camus",
+  "isbn": "978-2070360024",
+  "publicationYear": 1942,
+  "genre": "Philosophie"
 }
 
-### Récupérer tous les livres
+### 2. Récupérer tous les livres (GET) - Doit être trié par titre
 GET http://localhost:8081/api/books
 
-### Créer un livre avec accents (teste l'encodage UTF-8)
-POST http://localhost:8081/api/books
+### 3. Rechercher par titre (Search)
+GET http://localhost:8081/api/books/search?title=Etranger
+
+### 4. Filtrer par genre (Genre)
+GET http://localhost:8081/api/books/genre/Philosophie
+
+### 5. Mettre à jour le livre (PUT) - Remplace {id} par l'ID reçu au point 1
+PUT http://localhost:8081/api/books/1
 Content-Type: application/json; charset=utf-8
 
 {
-  "title": "Les Misérables",
-  "author": "Victor Hugo",
-  "isbn": "789012",
-  "publicationYear": 1862,
-  "genre": "Roman"
+  "title": "L'Étranger - Édition Spéciale",
+  "author": "Albert Camus",
+  "isbn": "978-2070360024",
+  "publicationYear": 1942,
+  "genre": "Classique"
 }
+
+### 6. Tester la validation (Erreur 400 attendue)
+POST http://localhost:8081/api/books
+Content-Type: application/json
+
+{
+  "title": "",
+  "author": "Test",
+  "publicationYear": 2029
+}
+
+### 7. Supprimer le livre (DELETE)
+DELETE http://localhost:8081/api/books/1
